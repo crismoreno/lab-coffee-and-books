@@ -1,24 +1,31 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
+const Places = require("../models/place");
 
 /* GET home page. */
-router.get("/", function(req, res, next) {
-  res.render("index", { title: "Express" });
+router.get("/", function (req, res, next) {
+  res.render("index", {
+    title: "Express"
+  });
 });
 
-router.post((req, res, next) => {
+router.post("/", (req, res, next) => {
   // Get Params from POST
   const location = {
     type: "Point",
     coordinates: [req.body.longitude, req.body.latitude]
   };
 
-  // Create a new Restaurant with location
-  const newLocation = {
-    location: location
-  };
 
-  // Save the restaurant to the Database
+
+
+  const newLocation = Places({
+    location: location
+  });
+
+
+
+
   newLocation.save(error => {
     if (error) {
       console.log(error);
