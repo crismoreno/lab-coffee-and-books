@@ -1,0 +1,29 @@
+{
+    
+        "extends": "eslint:recommended",
+        "env": {
+            "mongo": true,
+            "es6": true,
+            "jquery": true,
+            "node": true
+        },
+        "parserOptions": {
+            "ecmaVersion": 6
+        },
+        "rules": {
+            "semi": [2, "always"],
+            "no-unused-vars": "off",
+            "no-multiple-empty-lines": "off",
+            "eol-last": "off",
+            "indent": "off",
+            "no-sequence": "never",
+            "standard-property-even-spacing": "never",
+            // "quotes": ["error", "double"],
+            "comma-dangle": ["error", "never"],
+            "no-const-assign": "error",
+            "prefer-const": "error",
+            "no-console": "off"
+    
+        }
+    
+    }
